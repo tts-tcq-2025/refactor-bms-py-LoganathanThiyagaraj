@@ -1,7 +1,7 @@
 import unittest
 
 # Import the vitals_ok function from your vitals.py module
-from vitals import vitals_ok
+from monitor import vitals_ok
 
 class VitalsOkTest(unittest.TestCase):
     """
@@ -78,4 +78,5 @@ class VitalsOkTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2) # verbosity=2 provides more detailed output for each test
+
 
