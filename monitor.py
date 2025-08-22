@@ -9,7 +9,6 @@ ADULT_VITAL_THRESHOLDS = {
 }
 
 # --- Core Logic ---
-# --- Core Logic ---
 def is_value_critical(value: float, vital_type_name: str, thresholds_config: dict) -> Tuple[bool, str]:
     thresholds = thresholds_config.get(vital_type_name) # Path 1: if not thresholds
     if not thresholds: # Decision 1
