@@ -6,7 +6,6 @@ from vitals import vitals_ok
 class VitalsOkTest(unittest.TestCase):
     """
     Tests the vitals_ok function.
-    This function is pure, so testing is direct and doesn't require mocking.
     """
 
     def test_all_vitals_normal(self):
@@ -79,3 +78,4 @@ class VitalsOkTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2) # verbosity=2 provides more detailed output for each test
+
