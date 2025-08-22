@@ -69,7 +69,7 @@ class VitalsOkTest(unittest.TestCase):
         # Pulse: Just outside high
         self.assertFalse(vitals_ok(98.6, 100.0001, 95))
         # Pulse: Just inside low
-        self.assertTrue(vitals_ok(98.6, 59.9999, 95)) # Note: using 59.9999 as it would round to 60 for an integer
+        self.assertTrue(vitals_ok(98.6, 60, 95)) # Note: using 59.9999 as it would round to 60 for an integer
                                                      # pulse rate, but testing float behavior for robustness.
                                                      # If pulseRate is strictly integer, this might be 59.
         # SpO2: Just outside low
@@ -78,6 +78,7 @@ class VitalsOkTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2) # verbosity=2 provides more detailed output for each test
+
 
 
 
