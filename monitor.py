@@ -23,7 +23,7 @@ def is_value_critical(value: float, vital_type_name: str, thresholds_config: dic
 
     if value < min_val or value > max_val:
         # The message is still part of the pure function's return for potential debugging/logging
-        return True, f"{display_name} ({value}{unit}) is out of range ({min_val}-{max_val}{unit})!"
+        return True, f"{display_name} is out of range!"
     
     return False, "Normal"
 
