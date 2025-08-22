@@ -9,11 +9,10 @@ ADULT_VITAL_THRESHOLDS = {
 }
 
 # --- Core Logic ---
-def is_value_critical(value: float, vital_type_name: str, thresholds_config: dict) -> Tuple[bool, str]: # <--- USE Tuple here
-
-    thresholds = thresholds_config.get(vital_type_name)
-    if not thresholds:
-
+# --- Core Logic ---
+def is_value_critical(value: float, vital_type_name: str, thresholds_config: dict) -> Tuple[bool, str]:
+    thresholds = thresholds_config.get(vital_type_name) # Path 1: if not thresholds
+    if not thresholds: # Decision 1
         return False, f"Unknown vital sign type: {vital_type_name}."
 
     min_val = thresholds['min']
@@ -21,11 +20,10 @@ def is_value_critical(value: float, vital_type_name: str, thresholds_config: dic
     display_name = thresholds['display_name']
     unit = thresholds['unit']
 
-    if value < min_val or value > max_val:
-        # The message is still part of the pure function's return for potential debugging/logging
+    if value < min_val or value > max_val: # Decision 2 (compound condition)
         return True, f"{display_name} is out of range!"
     
-    return False, "Normal"
+    return False, "Normal" 
 
 
 def vitals_ok(
